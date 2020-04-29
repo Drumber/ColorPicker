@@ -108,7 +108,7 @@ public class ColorPalettePanel extends JPanel {
 		item.addMouseListener(paletteItemClickListener);
 		
 		if(listPaletteItems.size() < maxPaletteItems || maxPaletteItems <= -1) {
-			listPaletteItems.add(item);
+			listPaletteItems.add(0, item);
 		} else {
 			switch(addBehavior) {
 				case REPLACE_FIRST:

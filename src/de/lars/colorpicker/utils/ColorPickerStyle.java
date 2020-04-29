@@ -24,6 +24,11 @@ public class ColorPickerStyle {
 	 */
 	public static Color colorForegroundSelector = Color.WHITE;
 	
+	/**
+	 * Text color
+	 */
+	public static Color colorText = Color.BLACK;
+	
 	
 	/**
 	 * Util method to set both background colors

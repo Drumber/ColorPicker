@@ -53,6 +53,7 @@ public class ColorValuesPanel extends JPanel {
 		setBackground(ColorPickerStyle.colorBackground);
 		
 		label1 = new JLabel("lbl1");
+		label1.setForeground(ColorPickerStyle.colorText);
 		gbc_label1 = new GridBagConstraints();
 		gbc_label1.insets = new Insets(0, 0, 5, 5);
 		gbc_label1.gridy = 0;
@@ -60,6 +61,7 @@ public class ColorValuesPanel extends JPanel {
 		add(label1, gbc_label1);
 		
 		label2 = new JLabel("lbl2");
+		label2.setForeground(ColorPickerStyle.colorText);
 		GridBagConstraints gbc_label2 = new GridBagConstraints();
 		gbc_label2.insets = new Insets(0, 0, 5, 5);
 		gbc_label2.gridx = 1;
@@ -67,6 +69,7 @@ public class ColorValuesPanel extends JPanel {
 		add(label2, gbc_label2);
 		
 		label3 = new JLabel("lbl3");
+		label3.setForeground(ColorPickerStyle.colorText);
 		GridBagConstraints gbc_label3 = new GridBagConstraints();
 		gbc_label3.insets = new Insets(0, 0, 5, 5);
 		gbc_label3.gridx = 2;

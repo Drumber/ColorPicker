@@ -65,18 +65,19 @@ public class ColorPicker extends JComponent {
 	 * @param initialColor selected color
 	 */
 	public ColorPicker(Color initialColor) {
-		this(initialColor, true, true, true, true);
+		this(initialColor, 30, true, true, true, true);
 	}
 	
 	/**
 	 * Creates a ColorPicker pane with the specified parameters
 	 * @param initialColor selected color
+	 * @param maxPaletteColors maximum number of color palette items
 	 * @param previewPanel enable or disable {@link ColorPreviewPanel}
 	 * @param colorValues enable or disable {@linkplain ColorValuesPanel}
 	 * @param colorPalette enable or disable {@link ColorPalettePanel}
 	 * @param sharedPaletteColors enable or disable shared color palette ({@link #paletteColors})
 	 */
-	public ColorPicker(Color initialColor, boolean previewPanel, boolean colorValues, boolean colorPalette, boolean sharedPaletteColors) {
+	public ColorPicker(Color initialColor, int maxPaletteColors, boolean previewPanel, boolean colorValues, boolean colorPalette, boolean sharedPaletteColors) {
 		this.previewPanelEnabled = previewPanel;
 		this.colorValuesEnabled = colorValues;
 		this.colorPaletteEnabled = colorPalette;
@@ -356,6 +357,14 @@ public class ColorPicker extends JComponent {
 		return panelColorPalette;
 	}
 	
+	/**
+	 * Set maximum amount of color palette items
+	 * @param maxPaletteItems maximum platte items
+	 */
+	public void setMaxPaletteItems(int maxPaletteItems) {
+		panelColorPalette.setMaxPaletteItems(maxPaletteItems);
+	}
+	
 	
 	/*==========
 	 * DIALOG
@@ -384,6 +393,25 @@ public class ColorPicker extends JComponent {
 		final ColorPicker cp = new ColorPicker(initialColor != null ? initialColor : Color.RED);
 		
 		JDialog dialog = createDialog(cp, title, textOk, textCancel, size, initialColor);
+		dialog.pack();
+		
+		dialog.show();
+		dialog.dispose();
+		
+		return cp.getColor();
+	}
+	
+	/**
+	 * Shows a ColorPicker dialog without color palette. Blocks the thread that started the dialog.
+	 * @param title title of the dialog
+	 * @param initialColor selected color
+	 * @param showValuesPanel should the {@link ColorValuesPanel} be shown
+	 * @return selected color or <code>null</code> if <code>Cancel</code> was clicked
+	 */
+	public static Color showSimpleDialog(String title, Color initialColor, boolean showValuesPanel) {
+		final ColorPicker cp = new ColorPicker(initialColor != null ? initialColor : Color.RED, -1, true, showValuesPanel, false, false);
+		
+		JDialog dialog = createDialog(cp, title, "Ok", "Cancel", new Dimension(500, 350), initialColor);
 		dialog.pack();
 		
 		dialog.show();
