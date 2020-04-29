@@ -27,7 +27,7 @@ public class ColorPickerStyle {
 	
 	/**
 	 * Util method to set both background colors
-	 * @param color
+	 * @param color new background color
 	 */
 	public static void setBackgrounds(Color color) {
 		colorBackground = color;

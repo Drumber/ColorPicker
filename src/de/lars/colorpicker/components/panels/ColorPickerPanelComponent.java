@@ -53,7 +53,7 @@ public class ColorPickerPanelComponent extends JPanel {
 	
 	/**
 	 * Fires a color changed event
-	 * @param color
+	 * @param color changed color
 	 */
 	protected void onColorValueChanged(Color color) {
 		for(ColorValueChangeEvent listener : colorChangeListener) {
@@ -65,7 +65,7 @@ public class ColorPickerPanelComponent extends JPanel {
 	
 	/**
 	 * Fires a hue changed event
-	 * @param hue
+	 * @param hue changed hue
 	 */
 	protected void onHueValueChanged(float hue) {
 		for(ColorValueChangeEvent listener : colorChangeListener) {

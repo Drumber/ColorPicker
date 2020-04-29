@@ -42,7 +42,7 @@ public class ColorValuesPanel extends JPanel {
 	
 	/**
 	 * Create a new color values panel with the specified initial color
-	 * @param color
+	 * @param color initial color
 	 */
 	public ColorValuesPanel(Color color) {
 		this.color = color;

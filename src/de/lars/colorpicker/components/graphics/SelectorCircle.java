@@ -55,7 +55,7 @@ public class SelectorCircle {
 	/**
 	 * Check if the value is within the range <code>minX -  maxX</code>
 	 * @param x x value
-	 * @return x if <code>minX > x < maxX</code> or {@link #minX} / {@link #maxX}
+	 * @return x if <code>minX &#62; x &#60; maxX</code> or {@link #minX} / {@link #maxX}
 	 */
 	public int checkX(int x) {
 		if(x < minX) x = minX;
@@ -66,7 +66,7 @@ public class SelectorCircle {
 	/**
 	 * Check if the value is within the range <code>minY -  maxY</code>
 	 * @param y y value
-	 * @return y if <code>minY > y < maxY</code> or {@link #minY} / {@link #maxY}
+	 * @return y if <code>minY &#62; y &#60; maxY</code> or {@link #minY} / {@link #maxY}
 	 */
 	public int checkY(int y) {
 		if(y < minY) y = minY;

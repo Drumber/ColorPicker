@@ -30,8 +30,8 @@ public class ColorPicker extends JComponent {
 	private static final long serialVersionUID = 5683870507919526815L;
 	
 	/**
-	 * <p>Static color array for {@link ColorPalettePanel}<p>
-	 * <p>Used when {@link #sharedPaletteColors} <code>true</code><p>
+	 * <p>Static color array for {@link ColorPalettePanel}</p>
+	 * <p>Used when {@link #sharedPaletteColors} <code>true</code></p>
 	 */
 	public static Color[] paletteColors;
 	

@@ -5,7 +5,8 @@
 
 	<groupId>de.lars.colorpicker</groupId>
 	<artifactId>colorpicker</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>0.1</version>
+	<packaging>jar</packaging>
 
 	<name>ColorPicker</name>
 	<description>Java Swing ColorPicker</description>
@@ -14,11 +15,50 @@
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<excludes>
+						<exclude>de/lars/colorpicker/ColorPickerTest.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<excludes>
+						<exclude>de/lars/colorpicker/ColorPickerTest.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<excludes>
+						<exclude>de/lars/colorpicker/ColorPickerTest.java</exclude>
+					</excludes>
 				</configuration>
 			</plugin>
 		</plugins>

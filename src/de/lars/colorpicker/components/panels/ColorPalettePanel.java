@@ -89,7 +89,7 @@ public class ColorPalettePanel extends JPanel {
 	
 	/**
 	 * Add new color(s) to the color palette
-	 * @param color
+	 * @param color new color(s)
 	 */
 	public void addColor(Color... color) {
 		for(Color c : color) {

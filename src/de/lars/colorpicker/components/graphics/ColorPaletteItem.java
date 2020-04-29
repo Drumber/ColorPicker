@@ -33,9 +33,9 @@ public class ColorPaletteItem extends JComponent {
 	}
 	
 	/**
-	 * Creates a new color palette item with the specified color and size (width & height)
+	 * Creates a new color palette item with the specified color and size (width &#38; height)
 	 * @param color background color
-	 * @param size size of the rectangle (width & height)
+	 * @param size size of the rectangle (width &#38; height)
 	 */
 	public ColorPaletteItem(Color color, int size) {
 		this(color, size, size, DEFAULT_CORNER_RADIUS);
