@@ -29,6 +29,11 @@ public class ColorPickerStyle {
 	 */
 	public static Color colorText = Color.BLACK;
 	
+	/**
+	 * Button background color. Default button background if null.
+	 */
+	public static Color colorButtonBackground = null;
+	
 	
 	/**
 	 * Util method to set both background colors

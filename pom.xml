@@ -5,7 +5,7 @@
 
 	<groupId>de.lars.colorpicker</groupId>
 	<artifactId>colorpicker</artifactId>
-	<version>0.2</version>
+	<version>0.3</version>
 	<packaging>jar</packaging>
 
 	<name>ColorPicker</name>
@@ -27,9 +27,7 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
-					<excludes>
-						<exclude>de/lars/colorpicker/ColorPickerTest.java</exclude>
-					</excludes>
+
 				</configuration>
 			</plugin>
 			<plugin>
@@ -45,9 +43,6 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
-					<excludes>
-						<exclude>de/lars/colorpicker/ColorPickerTest.java</exclude>
-					</excludes>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -56,9 +51,6 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
-					<excludes>
-						<exclude>de/lars/colorpicker/ColorPickerTest.java</exclude>
-					</excludes>
 				</configuration>
 			</plugin>
 		</plugins>

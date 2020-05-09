@@ -394,8 +394,9 @@ public class ColorPicker extends JComponent {
 		
 		JDialog dialog = createDialog(cp, title, textOk, textCancel, size, initialColor);
 		dialog.pack();
+		dialog.setLocationRelativeTo(null);
 		
-		dialog.show();
+		dialog.setVisible(false);
 		dialog.dispose();
 		
 		return cp.getColor();
@@ -413,8 +414,9 @@ public class ColorPicker extends JComponent {
 		
 		JDialog dialog = createDialog(cp, title, "Ok", "Cancel", new Dimension(500, 350), initialColor);
 		dialog.pack();
+		dialog.setLocationRelativeTo(null);
 		
-		dialog.show();
+		dialog.setVisible(true);
 		dialog.dispose();
 		
 		return cp.getColor();
@@ -445,7 +447,7 @@ public class ColorPicker extends JComponent {
 		btnOk.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dialog.hide();
+				dialog.setVisible(false);
 			}
 		});
 		
@@ -455,9 +457,14 @@ public class ColorPicker extends JComponent {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				cp.selColor = null;
-				dialog.hide();
+				dialog.setVisible(false);
 			}
 		});
+		
+		if(ColorPickerStyle.colorButtonBackground != null) {
+			btnOk.setBackground(ColorPickerStyle.colorButtonBackground);
+			btnCancel.setBackground(ColorPickerStyle.colorButtonBackground);
+		}
 		
 		JPanel rootPanel = new JPanel(new BorderLayout());
 		rootPanel.setBackground(ColorPickerStyle.colorBackground);

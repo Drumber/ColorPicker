@@ -90,9 +90,9 @@ public class ColorValuesPanel extends JPanel {
 		
 		btnModeSwitch = new JButton(new SwitchIcon(Color.BLACK, 10, 15));
 		btnModeSwitch.setToolTipText("Switch Mode");
-		btnModeSwitch.setBorderPainted(false);
 		btnModeSwitch.setFocusPainted(false);
-		btnModeSwitch.setBackground(new Color(220, 220, 220));
+		if(ColorPickerStyle.colorButtonBackground != null)
+			btnModeSwitch.setBackground(ColorPickerStyle.colorButtonBackground);
 		btnModeSwitch.setAlignmentX(RIGHT_ALIGNMENT);
 		btnModeSwitch.addActionListener(modeSwitchListener);
 		GridBagConstraints gbc_btnModeSwitch = new GridBagConstraints();
