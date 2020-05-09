@@ -9,7 +9,7 @@ Dependency:
 <dependency>
   <groupId>de.lars.colorpicker</groupId>
   <artifactId>colorpicker</artifactId>
-  <version>0.1</version>
+  <version>0.3</version>
 </dependency> 
 ```
 GitHub packages repository:
@@ -21,3 +21,6 @@ GitHub packages repository:
     </repository>
 </repositories>
 ```
+
+#### Download Jar
+The jar can be downloaded directly without Maven from the [GitHub Packages page](https://github.com/Drumber/ColorPicker/packages/204555).
