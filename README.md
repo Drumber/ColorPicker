@@ -40,7 +40,7 @@ Dependency:
 <dependency>
   <groupId>com.github.Drumber</groupId>
   <artifactId>ColorPicker</artifactId>
-  <version>v0.3</version>
+  <version>v0.4</version>
 </dependency> 
 ```
 JitPack repository:
