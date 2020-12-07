@@ -146,6 +146,8 @@ public class ColorFieldPanel extends ColorPickerPanelComponent {
 		if(System.currentTimeMillis() - lastUpdate > 50) {	// update only 20 times per second
 			lastUpdate = System.currentTimeMillis();
 			cpField.update();
+			if(cpField.getBufferedImage() != null)
+				color = getColorFromImage(cpField.getBufferedImage(), sc);
 			repaint();
 		}
 	}

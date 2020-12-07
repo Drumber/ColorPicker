@@ -412,7 +412,7 @@ public class ColorPicker extends JComponent {
 		dialog.pack();
 		dialog.setLocationRelativeTo(null);
 		
-		dialog.setVisible(false);
+		dialog.setVisible(true);
 		dialog.dispose();
 		
 		return cp.getColor();
