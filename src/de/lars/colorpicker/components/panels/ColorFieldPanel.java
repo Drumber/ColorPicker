@@ -67,9 +67,7 @@ public class ColorFieldPanel extends ColorPickerPanelComponent {
 			
 			// draw color selector
 			g2d.setClip(null);
-			int posX = sc.checkX(selX) - paddingLeft;
-			int posY = sc.checkY(selY) - paddingTop;
-			Color selColor = new Color(cpField.getBufferedImage().getRGB(posX, posY));
+			Color selColor = getColorFromImage(cpField.getBufferedImage(), sc);
 			sc.setColor(selColor);
 			sc.draw(g2d, selX, selY);
 			color = selColor;
@@ -109,8 +107,11 @@ public class ColorFieldPanel extends ColorPickerPanelComponent {
 		selX = e.getX() + paddingLeft;
 		selY = e.getY() + paddingTop;
 		repaint();
+		Color selColor = sc.getColor();
+		if(cpField.getBufferedImage() != null)
+			selColor = getColorFromImage(cpField.getBufferedImage(), sc); // try to get color from current image
 		// fire change event
-		onColorValueChanged(sc.getColor());
+		onColorValueChanged(selColor);
 	}
 
 	/**

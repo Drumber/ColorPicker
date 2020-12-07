@@ -67,9 +67,7 @@ public class HueSliderPanel extends ColorPickerPanelComponent {
 			
 			// draw color selector
 			g2d.setClip(null);
-			int posX = sc.checkX(selX) - paddingLeft;
-			int posY = sc.checkY(selY) - paddingTop;
-			Color selColor = new Color(cpHueSlider.getBufferedImage().getRGB(posX, posY));
+			Color selColor = getColorFromImage(cpHueSlider.getBufferedImage(), sc);
 			sc.setColor(selColor);
 			sc.draw(g2d, selX, selY);
 			
@@ -111,6 +109,8 @@ public class HueSliderPanel extends ColorPickerPanelComponent {
 		repaint();
 		// fire change events
 		Color selColor = sc.getColor();
+		if(cpHueSlider.getBufferedImage() != null)
+			selColor = getColorFromImage(cpHueSlider.getBufferedImage(), sc); // try to get color from current image
 		float hue = Color.RGBtoHSB(selColor.getRed(), selColor.getGreen(), selColor.getBlue(), null)[0];
 		onHueValueChanged(hue);
 		onColorValueChanged(selColor);

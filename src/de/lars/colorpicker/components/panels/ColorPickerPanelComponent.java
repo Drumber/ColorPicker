@@ -1,12 +1,14 @@
 package de.lars.colorpicker.components.panels;
 
 import java.awt.Color;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JPanel;
 
 import de.lars.colorpicker.components.events.ColorValueChangeEvent;
+import de.lars.colorpicker.components.graphics.SelectorCircle;
 
 /**
  * Super class of {@link ColorFieldPanel} and {@link HueSliderPanel}
@@ -41,6 +43,19 @@ public class ColorPickerPanelComponent extends JPanel {
 		selMaxX = getWidth() - paddingRight - 1;
 		selMinY = paddingTop;
 		selMaxY = getHeight() - paddingBottom - 1;
+	}
+	
+	/**
+	 * Calculates the color from the buffered image
+	 * while respecting the padding.
+	 * @param bfi BufferedImage
+	 * @param sc SelectorCircle used by the color panel
+	 * @return color at the current position of the selector
+	 */
+	protected Color getColorFromImage(BufferedImage bfi, SelectorCircle sc) {
+		int posX = sc.checkX(selX) - paddingLeft;
+		int posY = sc.checkY(selY) - paddingTop;
+		return new Color(bfi.getRGB(posX, posY));
 	}
 	
 	/**
