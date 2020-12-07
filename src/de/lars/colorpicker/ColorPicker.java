@@ -4,24 +4,40 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Frame;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
 import de.lars.colorpicker.components.events.ColorValueAdapter;
 import de.lars.colorpicker.components.events.ColorValueChangeEvent;
 import de.lars.colorpicker.components.events.PaletteItemListener;
 import de.lars.colorpicker.components.graphics.ColorPaletteItem;
-import de.lars.colorpicker.components.panels.*;
+import de.lars.colorpicker.components.panels.ColorFieldPanel;
+import de.lars.colorpicker.components.panels.ColorPalettePanel;
+import de.lars.colorpicker.components.panels.ColorPreviewPanel;
+import de.lars.colorpicker.components.panels.ColorValuesPanel;
+import de.lars.colorpicker.components.panels.HueSliderPanel;
 import de.lars.colorpicker.listener.ColorListener;
 import de.lars.colorpicker.utils.ColorPickerStyle;
 import de.lars.colorpicker.utils.ColorUitl;
 
 /**
- * Simple and modern ColorPicker
+ * Simple and modern ColorPicker for Java swing.
  * 
  * @author Lars O.
  *

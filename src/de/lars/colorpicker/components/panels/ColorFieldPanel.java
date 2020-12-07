@@ -4,7 +4,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.geom.RoundRectangle2D;
 
@@ -44,6 +46,7 @@ public class ColorFieldPanel extends ColorPickerPanelComponent {
 		cpField = new ColorPickerField(fieldWidth, fieldHeight, hue);
 		sc = new SelectorCircle(color, selMinX, selMinY, selMaxX, selMaxY);
 		addMouseMotionListener(mouseDragAdapter);
+		addMouseListener(mouseClickAdapter);
 		setBackground(ColorPickerStyle.colorBackground);
 	}
 	
@@ -76,20 +79,39 @@ public class ColorFieldPanel extends ColorPickerPanelComponent {
 	
 	
 	/**
-	 * Triggered when the mouse is dragged  within the color field
+	 * Triggered when the mouse is dragged within the color field
 	 */
 	protected MouseMotionAdapter mouseDragAdapter = new MouseMotionAdapter() {
 		@Override
 		public void mouseDragged(MouseEvent e) {
 			super.mouseDragged(e);
-			// set coordinates of color selector and repaint
-			selX = e.getX() + paddingLeft;
-			selY = e.getY() + paddingTop;
-			repaint();
-			// fire change event
-			onColorValueChanged(sc.getColor());
+			onMouseEvent(e);
 		}
 	};
+	
+	/**
+	 * Triggered when the mouse is pressed within the color field
+	 */
+	protected MouseListener mouseClickAdapter = new MouseAdapter() {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			onMouseEvent(e);
+		};
+	};
+	
+	/**
+	 * Handles a mouse event from the color field.
+	 * Set the coordinates for the selector and trigger repaint.
+	 * @param e the MouseEvent that was triggered
+	 */
+	protected void onMouseEvent(MouseEvent e) {
+		// set coordinates of color selector and repaint
+		selX = e.getX() + paddingLeft;
+		selY = e.getY() + paddingTop;
+		repaint();
+		// fire change event
+		onColorValueChanged(sc.getColor());
+	}
 
 	/**
 	 * Replaces the current color field
